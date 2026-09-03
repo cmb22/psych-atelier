@@ -1,13 +1,11 @@
 .languages {
-    position: absolute;
-    top: 30px;
-    right: 35px;
     display: flex;
     align-items: center;
     gap: 9px;
-    z-index: 20;
     font-size: 11px;
     letter-spacing: 0.14em;
+    white-space: nowrap;
+    height: auto;
 }
 
 .item {
@@ -32,11 +30,4 @@
 
 .separator {
     color: #bbb;
-}
-
-@media (max-width: 600px) {
-    .languages {
-        top: 20px;
-        right: 20px;
-    }
 }

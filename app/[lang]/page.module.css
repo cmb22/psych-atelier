@@ -1,0 +1,64 @@
+.home {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brand {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    height: 100%;
+}
+
+.logo {
+    display: block;
+    width: min(700px, 90vw);
+    height: auto;
+}
+
+.languageSwitcher {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 20;
+}
+
+.productLink {
+    display: block;
+    position: absolute;
+    bottom: 30px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #111;
+    color: #111;
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.productLink:hover {
+    opacity: 0.6;
+}
+
+@media (max-width: 650px) {
+    .languageSwitcher {
+        top: 20px;
+        right: 20px;
+    }
+
+    .brand {
+        gap: 45px;
+    }
+
+    .logo {
+        width: 90vw;
+    }
+}

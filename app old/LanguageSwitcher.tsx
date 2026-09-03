@@ -10,8 +10,10 @@ const languages: Language[] = ["en", "de", "fr"];
 
 export default function LanguageSwitcher({
     currentLanguage,
+    className = "",
 }: {
     currentLanguage: Language;
+    className?: string;
 }) {
     const pathname = usePathname();
 
@@ -24,7 +26,7 @@ export default function LanguageSwitcher({
         pathname.replace(/^\/(en|de|fr)(?=\/|$)/, "") || "";
 
     return (
-        <nav className={styles.languages} aria-label="Language">
+        <nav className={`${styles.languages} ${className}`} aria-label="Language">
             {languages.map((language, index) => {
                 const href = `/${language}${pathWithoutLanguage}`;
 
