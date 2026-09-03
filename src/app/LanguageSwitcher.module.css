@@ -1,0 +1,42 @@
+.languages {
+    position: absolute;
+    top: 30px;
+    right: 35px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    z-index: 20;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.languages a {
+    color: #888;
+    text-decoration: none;
+}
+
+.languages a:hover {
+    color: #111;
+}
+
+.languages .active {
+    color: #111;
+    font-weight: 700;
+}
+
+.separator {
+    color: #bbb;
+}
+
+@media (max-width: 600px) {
+    .languages {
+        top: 20px;
+        right: 20px;
+    }
+}

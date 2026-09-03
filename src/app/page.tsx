@@ -1,22 +1,21 @@
-import Image from "next/image";
-import Link from "next/link";
-import styles from "./page.module.css";
+import { headers } from "next/headers";
+import { redirect } from "next/navigation";
 
-export default function Home() {
-  return (
-    <main className={styles.home}>
-      <Image
-        className={styles.logo}
-        src="/logo.jpg"
-        alt="PsychAtelier — Designed in Outer Space"
-        width={700}
-        height={250}
-        priority
-      />
+export default async function Home() {
+    const headersList = await headers();
+    const acceptLanguage = headersList.get("accept-language") ?? "";
 
-      <Link className={styles.productLink} href="/the-67">
-        Discover The ’67
-      </Link>
-    </main>
-  );
+    const preferredLanguage = acceptLanguage
+        .split(",")
+        .map((language) => language.split(";")[0].trim().toLowerCase());
+
+    if (preferredLanguage.some((language) => language.startsWith("de"))) {
+        redirect("/de");
+    }
+
+    if (preferredLanguage.some((language) => language.startsWith("fr"))) {
+        redirect("/fr");
+    }
+
+    redirect("/en");
 }
