@@ -9,7 +9,7 @@
 
 .mainImage {
     position: relative;
-    min-height: 600px;
+    min-height: 700px;
     flex: 1;
     overflow: hidden;
     background: #eee;
